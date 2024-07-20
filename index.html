@@ -178,7 +178,7 @@
         </div>
         <p>Enter your monthly investment amount:</p>
         <input type="number" id="investmentAmount" placeholder="e.g., 10000" />
-        <button onclick="calculateFutureValue()">Calculate</button>
+        <button id="calculateButton" onclick="calculateFutureValue()">Calculate</button>
         <div id="result"></div>
     </div>
     <div class="tables-container">
@@ -321,6 +321,12 @@
         function formatNumber(number) {
             return number.toLocaleString("en-IN");
         }
+        document.getElementById('submitButton').addEventListener('click', function () {
+            gtag('event', 'click', {
+                'event_category': 'Button',
+                'event_label': 'Submit Button'
+            });
+        });
     </script>
 </body>
 
